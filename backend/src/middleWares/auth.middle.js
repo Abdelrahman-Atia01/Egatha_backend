@@ -1,6 +1,6 @@
    import jwt from "jsonwebtoken"
 import { userModel } from "../DB/models/user.model.js"
-import ApiError from "../utils/ApiError.js"
+import ApiError from "../utils/apiError.js"
 
 export   const authMiddle=async(req,res,next)=>{  
     try{

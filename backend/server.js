@@ -6,9 +6,11 @@ import AuthRouter from "./src/modules/Auth/Auth.router.js"
 import userRouter from "./src/modules/user/user.router.js"
 import ApiError from './src/utils/apiError.js';
 import { uploadsDir } from './services/service.js';
+import cors from "cors"
 const app =express()
 configDotenv()
 DB_Connection()
+app.use(cors())
 app.use(express.json())
 app.use("/uploads", express.static(uploadsDir))
 app.use("/auth",AuthRouter)

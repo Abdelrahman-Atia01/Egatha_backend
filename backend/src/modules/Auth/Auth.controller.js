@@ -30,7 +30,7 @@ const cryptPhone=CryptoJS.AES.encrypt(phone,process.env.phone_private_key).toStr
 
     ////email token
     const emailToken =jwt.sign({email},process.env.email_token)
-    const verify_link=`http://localhost:3100/auth/activate_account/${emailToken}`
+    const verify_link=`${process.env.API_BASE_URL}/auth/activate_account/${emailToken}`
     // const result =await sendEmail({
     //     to:email,
     //     subject:subject.register,
