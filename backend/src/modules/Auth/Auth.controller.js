@@ -64,7 +64,7 @@ const comparePasswrd=await bcrypt.compare(password,user.password)
 if(!comparePasswrd){
     return next(new ApiError("password is not correct",400))
 }
-const token =jwt.sign({id:user._id},process.env.token_user_key,{expiresIn:60*60})
+const token =jwt.sign({id:user._id},process.env.token_user_key,{expiresIn:60*60*60})
  res.json({message:"login success",Token:token,comparePasswrd})
     }catch(err){
     res.status(500).json({

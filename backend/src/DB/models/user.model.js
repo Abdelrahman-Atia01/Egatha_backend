@@ -23,7 +23,9 @@ confirmEmail:{
 password:{
     unique:[true,"password must be unique"],
     trim:true,
-    type:String
+    type:String,
+   minLength:[6,"userName at least 6 character"],
+        maxLength:[30,"userName at most 100 character"],  
 },
 gender:{
     type:String,
